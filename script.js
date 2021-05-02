@@ -2,11 +2,21 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchJokes();
 })
 
-const dadJokes = "https://icanhazdadjoke.com/"
+const jokes = "https://icanhazdadjoke.com/"
 
 function fetchJokes() {
-    fetch(dadJokes)
-        .then(resp => resp.json())
-        .then(data => console.log(data))
-        .catch(error => console.log(error)) 
+    fetch(jokes)
+        .then(response => response.json())
+        .then(data => jokesRender(data))
+        .catch(error => console.log(error));
 }
+
+function jokesRender(jokes) {
+        jokes.forEach(joke => {
+        jokeRender(joke)
+    })
+  }
+
+function jokeRender(joke) {
+        
+  }
