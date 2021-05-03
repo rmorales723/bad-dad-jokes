@@ -1,22 +1,18 @@
-document.addEventListener("DOMContentLoaded", () => {
-    fetchJokes();
-})
 
-const jokes = "https://icanhazdadjoke.com/"
+ 
+ document.addEventListener("DOMContentLoaded", () => {
+     fetchJokes();
+ })
 
-function fetchJokes() {
-    fetch(jokes)
+ const url = "https://icanhazdadjoke.com/"
+
+ function fetchJokes() {
+     fetch(url, {
+        headers: {
+          Accept: 'application/json'
+        }
+      }) 
         .then(response => response.json())
-        .then(data => jokesRender(data))
-        .catch(error => console.log(error));
-}
-
-function jokesRender(jokes) {
-        jokes.forEach(joke => {
-        jokeRender(joke)
-    })
-  }
-
-function jokeRender(joke) {
-        
-  }
+        .then(data => console.log(data))
+        .catch(error => console.error(error))
+ }
