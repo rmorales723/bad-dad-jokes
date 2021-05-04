@@ -16,5 +16,9 @@ function fetchJokes() {
         .catch(error => console.error(error))
  }
 
- 
+ function renderJoke(joke){
+    const h3 = document.createElement("h3")
+    h3.innerText = joke
+    document.querySelector(".container").append(h3)
+ }
 
