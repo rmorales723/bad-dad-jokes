@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", fetchJokes);
 
 newJokeBtn.addEventListener('click', fetchJokes);
 
+constlaughBtn = document.querySelector(".laugh-btn");
+
+
 function fetchJokes() {
      fetch(url, {
         headers: {
