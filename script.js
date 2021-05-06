@@ -14,7 +14,7 @@ newJokeBtn.addEventListener('click', () => {
     counter.innerHTML = count; 
 });
 
-
+likeBtn.addEventListener('click', play);
 
 function play() {
     var audio = document.getElementById("audio");
