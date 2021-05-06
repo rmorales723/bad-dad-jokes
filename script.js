@@ -1,16 +1,20 @@
 const url = "https://icanhazdadjoke.com/"
 const newJokeBtn = document.querySelector('.new-joke-btn');  
+const likeBtn = document.querySelector(".like-btn");
+const counter = document.getElementById("counter")
+let count = 0;
+
 
 document.addEventListener("DOMContentLoaded", fetchJokes);
 
 newJokeBtn.addEventListener('click', fetchJokes);
 
-const likeBtn = document.querySelector(".like-btn");
 
-likeBtn.addEventListener("click",(e) => {
-    e.preventDefault()
-    postJoke()
-    })
+
+likeBtn.addEventListener('click', () => {
+    count ++;
+    counter.innerHTML = count; 
+});
 
 function fetchJokes() {
      fetch(url, {
@@ -26,54 +30,6 @@ function fetchJokes() {
  function renderJoke(joke){
     const h3 = document.createElement("h3")
     h3.innerText = joke
+    document.querySelector(".container").innerHTML = "";
     document.querySelector(".container").append(h3)
-    const btn = document.createElement("button")
-    btn.innerText = `likes: ${joke.likes}`
-    //btn.id = joke.id
-
-    btn.addEventListener("click", likeJoke) 
-
- }
-
- function postjoke() {
-    fetch(url, {
-      method: 'POST',
-      headers:
-       {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-  
-      body: JSON.stringify({
-        "likes": 0
-      })
-    })
-  
-      .then(response => response.json())
-      .then(data => renderJoke(data))
-      .catch(error => console.log(error))
 }
-  
-  function likeJoke(e) {
-
-    let more = parseInt(e.target.innerText) + 1 
-    const url2 = "https://icanhazdadjoke.com/" + e.target.id
-      fetch(url2, {
-      method: 'PATCH',
-      headers:
-       {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-  
-      body: JSON.stringify({
-        "likes": more
-      })
-    })
-  
-      .then(response => response.json())
-        .then(data => e.target.innerText = "likes: " + data.likes)
-        
-  }
-
-  
