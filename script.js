@@ -9,6 +9,17 @@ document.addEventListener("DOMContentLoaded", fetchJokes);
 
 newJokeBtn.addEventListener('click', fetchJokes);
 
+newJokeBtn.addEventListener('click', () => {
+    count = 0;
+    counter.innerHTML = count; 
+});
+
+
+
+function play() {
+    var audio = document.getElementById("audio");
+    audio.play();
+  }
 
 
 likeBtn.addEventListener('click', () => {
