@@ -25,7 +25,7 @@ function play() {
 likeBtn.addEventListener('click', () => {
     count ++;
     counter.innerHTML = count; 
-    
+    counter.className = "is-size-2 has-text-centered has-text-weight-bold"
 });
 
 function fetchJokes() {
