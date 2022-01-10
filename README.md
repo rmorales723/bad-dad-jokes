@@ -1,2 +1,11 @@
-# mod1_project
-phase 1 project
+# Bad Dad Jokes
+
+ Press button to see a random joke.
+ 
+ Press button to like joke.
+ 
+ Clone and cd into bad-dad-jokes.
+ 
+ Run 'open index.html' in terminal.
+ 
+ ![bad-dad-jokes](https://user-images.githubusercontent.com/72527380/148710233-cee0b9c1-325d-4b5f-a385-e053fc34d53c.png)
